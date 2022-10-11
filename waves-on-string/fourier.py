@@ -9,7 +9,7 @@ Tk().withdraw()
 filename = askopenfilename() #open file dialog
 
 # read audio samples
-input_data = read(test-string.wav)
+input_data = read(filename)
 signal = input_data[1]
 sampling_freq = input_data[0]
 time = np.arange(len(signal))/sampling_freq
@@ -27,7 +27,7 @@ def plot_data(start_time,end_time):
 	plt.show()
 
 def FT_data(data,sampling_rate):
- #function to calcuate and display absolute value of Fourier Transform
+ #function to calculate and display absolute value of Fourier Transform
 
 	freq = 0.5 * sampling_rate * np.linspace(-1.0, 1.0, len(data))
 	FTdata = np.fft.fftshift(np.fft.fft(np.fft.fftshift(data)))
@@ -42,4 +42,4 @@ def FT_data(data,sampling_rate):
 	plt.show()
 
 plot_data(0,0.25) #plot signal in time window defined by 2 values
-FT_data(signal,sampling_freq) #Fourier Transfomr and plot absolute value
+FT_data(signal,sampling_freq) #Fourier Transform and plot absolute value
