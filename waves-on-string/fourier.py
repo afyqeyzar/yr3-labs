@@ -33,7 +33,7 @@ def FT_data(data,sampling_rate):
 	FTdata = np.fft.fftshift(np.fft.fft(np.fft.fftshift(data)))
 
 	freq_index1 = np.amin(np.where(freq >= 0))
-	freq_index2 = np.amin(np.where(freq >= 500))
+	freq_index2 = np.amin(np.where(freq >= 3000))
 	plt.figure()
 	plt.plot(freq[freq_index1:freq_index2+1],abs(FTdata[freq_index1:freq_index2+1]))
 	plt.ylabel("Magnitude [a.u.]")
@@ -41,5 +41,5 @@ def FT_data(data,sampling_rate):
 	plt.title("Absolute Value of Fourier Transform")
 	plt.show()
 
-plot_data(0,0.25) #plot signal in time window defined by 2 values
+plot_data(0,20) #plot signal in time window defined by 2 values
 FT_data(signal,sampling_freq) #Fourier Transform and plot absolute value
