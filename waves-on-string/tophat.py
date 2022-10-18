@@ -10,10 +10,10 @@ def tophat(start, end, end_of_graph, density):
     
   return ini_plot_x, y
 
-x, y = tophat(2, 4, 10, 0.1)
+# x, y = tophat(2, 4, 10, 0.1)
 
 
-print(x)
-print(y)
-plt.plot(x,y)
-plt.show()
+# print(x)
+# print(y)
+# plt.plot(x,y)
+# plt.show()
