@@ -20,10 +20,11 @@ def plot_data(start_time,end_time):
 	time_index1 = time.tolist().index(start_time)
 	time_index2 = time.tolist().index(end_time)
 	plt.figure()
-	plt.plot(time[time_index1:time_index2+1],signal[time_index1:time_index2+1])
+	plt.plot(time[time_index1:time_index2+1],signal[time_index1:time_index2+1],'black')
 	plt.ylabel("Amplitude [a.u.]")
 	plt.xlabel("Time (s)")
 	plt.title("Recorded Signal")
+	plt.grid()
 	plt.show()
 
 def FT_data(data,sampling_rate):
@@ -35,11 +36,13 @@ def FT_data(data,sampling_rate):
 	freq_index1 = np.amin(np.where(freq >= 0))
 	freq_index2 = np.amin(np.where(freq >= 3000))
 	plt.figure()
-	plt.plot(freq[freq_index1:freq_index2+1],abs(FTdata[freq_index1:freq_index2+1]))
+	plt.plot(freq[freq_index1:freq_index2+1],abs(FTdata[freq_index1:freq_index2+1]),'black')
 	plt.ylabel("Magnitude [a.u.]")
 	plt.xlabel("Frequency (Hz)")
-	plt.title("Absolute Value of Fourier Transform")
+	#plt.title("Absolute Value of Fourier Transform")
+	plt.xlim(0,700)
+	plt.grid()
 	plt.show()
 
-plot_data(0,20) #plot signal in time window defined by 2 values
+#plot_data(0,20) #plot signal in time window defined by 2 values
 FT_data(signal,sampling_freq) #Fourier Transform and plot absolute value
